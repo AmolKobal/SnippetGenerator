@@ -1,0 +1,255 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="Current">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F3468DA0-8639-48A5-9CF7-7E22D6FCBC42}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SnippetGenerator</RootNamespace>
+    <AssemblyName>SnippetGenerator</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\SnippetGenerator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SnippetGenerator.Designer.cs">
+      <DependentUpon>SnippetGenerator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\ClassGeneratorMembers.cs" />
+    <Compile Include="Forms\frmClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmClass.Designer.cs">
+      <DependentUpon>frmClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmConstant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmConstant.Designer.cs">
+      <DependentUpon>frmConstant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDelegate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDelegate.Designer.cs">
+      <DependentUpon>frmDelegate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEnumeration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEnumeration.Designer.cs">
+      <DependentUpon>frmEnumeration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmField.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmField.Designer.cs">
+      <DependentUpon>frmField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmInsertcodeSnippet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmInsertcodeSnippet.Designer.cs">
+      <DependentUpon>frmInsertcodeSnippet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmInterface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmInterface.Designer.cs">
+      <DependentUpon>frmInterface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmNamespace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmNamespace.Designer.cs">
+      <DependentUpon>frmNamespace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Program.cs" />
+    <Compile Include="Forms\frmParameterizedConstructor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmParameterizedConstructor.Designer.cs">
+      <DependentUpon>frmParameterizedConstructor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmProperty.Designer.cs">
+      <DependentUpon>frmProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmReferenceType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmReferenceType.Designer.cs">
+      <DependentUpon>frmReferenceType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmStruct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmStruct.Designer.cs">
+      <DependentUpon>frmStruct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmValueType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmValueType.Designer.cs">
+      <DependentUpon>frmValueType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SnippetGeneratorResouce.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SnippetGeneratorResouce.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\SnippetGenerator.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SnippetGenerator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmClass.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmConstant.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmConstant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDelegate.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDelegate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEnumeration.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEnumeration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmField.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmInsertcodeSnippet.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmInsertcodeSnippet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmInterface.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmInterface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmNamespace.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmNamespace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmParameterizedConstructor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmParameterizedConstructor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmProperty.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmReferenceType.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmReferenceType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmStruct.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmStruct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmValueType.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmValueType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SnippetGeneratorResouce.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SnippetGeneratorResouce.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CodeSnippet.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SnippetGenerator.xml" />
+    <None Include="Resources\Show.bmp" />
+    <None Include="Resources\Hide.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

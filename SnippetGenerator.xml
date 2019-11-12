@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<generatorInfo>
+  <Types>
+    <referenceTypes>
+      <referenceType name="class">
+        <containedTypes>
+          
+        </containedTypes> 
+      </referenceType>
+    </referenceTypes>
+    <valueTypes>
+      
+    </valueTypes>
+  </Types>
+</generatorInfo>
+
+
+<!--
+.NET Concepts:
+reference type
+A data type that is represented by a reference (similar to a pointer) to the type's actual value. If a reference type is assigned to a variable, that variable references (or "points to") the original value. No copy is made. Reference types comprise classes, interfaces, delegates, and boxed value types
+
+value type
+A data type that is represented by the type's actual value. If a value type is assigned to a variable, that variable is given a fresh copy of the value. (This is in contrast to a reference type, where assignment does not create a copy.) Value types are usually created on a method's stack frame, rather than in the garbage-collected heap. A value type can be boxed, which is a process that creates a corresponding reference type.
+
+interface
+A reference type that defines a contract. Other types implement an interface to guarantee that they support certain operations. The interface specifies the members that must be supplied by classes or other interfaces that implement it. Like classes, interfaces can contain methods, properties, indexers, and events as members.
+An interface has the following properties:
+An interface is similar to an abstract base class: any non-abstract type inheriting the interface must implement all its members.
+An interface cannot be instantiated directly.
+Interfaces can contain events, indexers, methods and properties.
+Interfaces contain no implementation of methods.
+Classes and structs can inherit from more than one interface.
+An interface can itself inherit from multiple interfaces.
+
+field
+A member that represents a variable associated with an object or class.
+
+delegate
+In the .NET Framework, a reference to a function. A delegate is equivalent to a function pointer.
+
+property
+Properties are members that provide a flexible mechanism to read, write, or compute the values of private fields. Properties can be used as though they are public data members, but they are actually special methods called accessors. This enables data to be accessed easily while still providing the safety and flexibility of methods.
+Properties enable a class to expose a public way of getting and setting values, while hiding implementation or verification code.
+A get property accessor is used to return the property value, and a set accessor is used to assign a new value. These accessors can have different access levels. For more information, see Accessor Accessibility.
+The value keyword is used to define the value being assigned by the set indexer. 
+Properties that do not implement a set method are read only.
+
+method 
+A method is a code block containing a series of statements.
+In WMI, a function that describes the behavior of a class. Including a method in a class does not guarantee an implementation of the method. The Implemented qualifier is attached to the method to indicate that an implementation is available for the class. A method is also a function included in a WMI interface. 
+
+event 
+In WMI, an occurrence of a change to static or dynamic data related to a managed object. 
+Events have the following properties:
+An event is a way for a class to notify objects that they need to perform an action of some kind.
+The most common use for events is in graphical user interfaces, although events can be useful at other times, such as signaling state changes.
+Events are usually declared using delegate event handlers.
+Events can call anonymous methods in place of delegates
+
+indexer
+A class member that permits instances of a class or structure to be accessed in the same way as arrays. Indexers are similar to properties, except that the get and set accessor methods of indexers take parameters, while property accessor methods do not. 
+Indexers enable objects to be indexed in a similar way to arrays.
+A get accessor returns a value. A set accessor assigns a value.
+The this keyword is used to define the indexers.
+The value keyword is used to define the value being assigned by the set indexer.
+Indexers do not have to be indexed by an integer value; it is up to you how to define the specific look-up mechanism.
+Indexers can be overloaded.
+Indexers can have more than one formal parameter, for example, when accessing a two-dimensional array.
+
+-->
+<!--
+OOPs concepts:
+encapsulation
+The ability of an object to hide its internal data and methods, making only the intended parts of the object programmatically accessible.
+
+-->
+<!--
+Class
+
+class
+A reference type that encapsulates data (constants and fields) and behavior (methods, properties, indexers, events, operators, instance constructors, static constructors, and destructors), and can contain nested types. Class types support inheritance, a mechanism whereby a derived class can extend and specialize a base class
+
+Classes are declared using the keyword class, as shown in the following example: 
+
+class TestClass
+{
+    // Methods, properties, fields, events, delegates 
+    // and nested classes go here.
+}
+
+Only single inheritance is allowed in C#. In other words, a class can inherit implementation from one base class only. However, a class can implement more than one interface.
+The access levels protected and private are only allowed on nested classes.
+
+Types declared inside a class without an Access Modifier default to private.
+
+A class can contain declarations of the following members:
+Constructors
+Destructors
+Constants
+Fields
+Methods
+Properties
+Indexers
+Operators
+Events
+Delegates
+Classes
+Interfaces
+Structs
+-->
+<!--
+Destructors are used to destruct instances of classes.
+Remarks:
+Destructors cannot be defined in structs. They are only used with classes.
+A class can only have one destructor.
+Destructors cannot be inherited or overloaded.
+Destructors cannot be called. They are invoked automatically.
+A destructor does not take modifiers or have parameters.
+ -->
+
+<!--
+Constructors are class methods that are executed when an object of a given type is created.
+Constructors have the same name as the class, and usually initialize the data members of the new object.
+
+A constructor that takes no parameters is called a default constructor. Default constructors are invoked whenever an object is instantiated using the new operator and no arguments are provided to new.
+
+Unless the class is static, classes without constructors are given a public default constructor by the C# compiler in order to enable class instantiation
+
+You can prevent a class from being instantiated by making the constructor private
+
+Constructors for struct types are similar to class constructors, but structs cannot contain an explicit default constructor because one is provided automatically by the compiler. This constructor initializes each field in the struct to the default values shown in the Default Values Table. However, this default constructor is only invoked if the struct is instantiated with new. 
+
+Both classes and structs can define constructors that take parameters. Constructors that take parameters must be called through a new statement or a base statement. Classes and structs can also define multiple constructors, and neither is required to define a default constructor.
+
+A constructor can use the base keyword to call the constructor of a base class. For example:
+
+public class Manager : Employee
+{
+    public Manager(int annualSalary)
+        : base(annualSalary)
+    {
+        //Add further instructions here.
+    }
+}
+In this example, the constructor for the base class is called before the block for the constructor is executed. The base keyword can be used with or without parameters. Any parameters to the constructor can be used as parameters to base, or as part of an expression. For more information, see base.
+
+In a derived class, if a base-class constructor is not called explicitly using the base keyword, then the default constructor, if there is one, is called implicitly.
+
+If a base class does not offer a default constructor, the derived class must make an explicit call to a base constructor using base.
+
+A constructor can invoke another constructor in the same object using the this keyword. Like base, this can be used with or without parameters, and any parameters in the constructor are available as parameters to this, or as part of an expression. For example, the second constructor in the previous example can be rewritten using this:
+
+public Employee(int weeklySalary, int numberOfWeeks)
+    : this(weeklySalary * numberOfWeeks)
+{
+}
+
+Constructors can be marked as public, private, protected, internal, or protected internal. These access modifiers define how users of the class can construct the class. For more information, see Access Modifiers.
+A constructor can be declared static using the static keyword. Static constructors are called automatically, immediately before any static fields are accessed, and are normally used to initialize static class members.
+
+-->
+
+<!--
+Value type    Default value  
+bool          false
+ 
+byte          0
+ 
+char          '\0'
+ 
+decimal       0.0M
+ 
+double        0.0D
+ 
+enum          The value produced by the expression (E)0, where E is the enum identifier.
+ 
+float         0.0F
+ 
+int           0
+ 
+long          0L
+ 
+sbyte         0
+ 
+short         0
+ 
+struct        The value produced by setting all value-type fields to their default values and all reference-type fields to null.
+ 
+uint          0
+ 
+ulong         0
+ 
+ushort        0
+
+-->
