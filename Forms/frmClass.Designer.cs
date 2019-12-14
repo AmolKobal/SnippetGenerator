@@ -60,6 +60,7 @@ namespace SnippetGenerator.Forms
             this.chkGenerateDefaultConstructor = new System.Windows.Forms.CheckBox();
             this.chkInheritance = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBack = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,40 +69,44 @@ namespace SnippetGenerator.Forms
             this.lblClassName.AutoSize = true;
             this.lblClassName.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClassName.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.lblClassName.Location = new System.Drawing.Point(8, 13);
+            this.lblClassName.Location = new System.Drawing.Point(11, 16);
+            this.lblClassName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblClassName.Name = "lblClassName";
-            this.lblClassName.Size = new System.Drawing.Size(74, 13);
+            this.lblClassName.Size = new System.Drawing.Size(92, 17);
             this.lblClassName.TabIndex = 0;
             this.lblClassName.Text = "Class Name:";
             // 
             // txtClassName
             // 
             this.txtClassName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClassName.Location = new System.Drawing.Point(112, 9);
+            this.txtClassName.Location = new System.Drawing.Point(149, 11);
+            this.txtClassName.Margin = new System.Windows.Forms.Padding(4);
             this.txtClassName.MaxLength = 100;
             this.txtClassName.Name = "txtClassName";
-            this.txtClassName.Size = new System.Drawing.Size(350, 22);
+            this.txtClassName.Size = new System.Drawing.Size(465, 26);
             this.txtClassName.TabIndex = 1;
-            this.txtClassName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtName_KeyPress);
             this.txtClassName.TextChanged += new System.EventHandler(this.txtClassName_TextChanged);
+            this.txtClassName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtName_KeyPress);
             // 
             // lblBaseClass
             // 
             this.lblBaseClass.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBaseClass.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.lblBaseClass.Location = new System.Drawing.Point(8, 7);
+            this.lblBaseClass.Location = new System.Drawing.Point(11, 9);
+            this.lblBaseClass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBaseClass.Name = "lblBaseClass";
-            this.lblBaseClass.Size = new System.Drawing.Size(106, 36);
+            this.lblBaseClass.Size = new System.Drawing.Size(141, 44);
             this.lblBaseClass.TabIndex = 9;
             this.lblBaseClass.Text = "Base Class : (Inherited From)";
             // 
             // txtBaseClassName
             // 
             this.txtBaseClassName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBaseClassName.Location = new System.Drawing.Point(112, 7);
+            this.txtBaseClassName.Location = new System.Drawing.Point(149, 9);
+            this.txtBaseClassName.Margin = new System.Windows.Forms.Padding(4);
             this.txtBaseClassName.MaxLength = 100;
             this.txtBaseClassName.Name = "txtBaseClassName";
-            this.txtBaseClassName.Size = new System.Drawing.Size(350, 22);
+            this.txtBaseClassName.Size = new System.Drawing.Size(465, 26);
             this.txtBaseClassName.TabIndex = 10;
             this.txtBaseClassName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtName_KeyPress);
             // 
@@ -110,9 +115,10 @@ namespace SnippetGenerator.Forms
             this.lblInterfaceNames.AutoSize = true;
             this.lblInterfaceNames.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInterfaceNames.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.lblInterfaceNames.Location = new System.Drawing.Point(8, 42);
+            this.lblInterfaceNames.Location = new System.Drawing.Point(11, 52);
+            this.lblInterfaceNames.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblInterfaceNames.Name = "lblInterfaceNames";
-            this.lblInterfaceNames.Size = new System.Drawing.Size(203, 13);
+            this.lblInterfaceNames.Size = new System.Drawing.Size(248, 17);
             this.lblInterfaceNames.TabIndex = 11;
             this.lblInterfaceNames.Text = "Names of Interfaces to implement:";
             // 
@@ -120,21 +126,22 @@ namespace SnippetGenerator.Forms
             // 
             this.lstInterfaces.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstInterfaces.FormattingEnabled = true;
-            this.lstInterfaces.ItemHeight = 14;
-            this.lstInterfaces.Location = new System.Drawing.Point(8, 93);
+            this.lstInterfaces.ItemHeight = 18;
+            this.lstInterfaces.Location = new System.Drawing.Point(11, 111);
+            this.lstInterfaces.Margin = new System.Windows.Forms.Padding(4);
             this.lstInterfaces.Name = "lstInterfaces";
-            this.lstInterfaces.Size = new System.Drawing.Size(373, 116);
+            this.lstInterfaces.Size = new System.Drawing.Size(496, 148);
             this.lstInterfaces.TabIndex = 14;
             this.lstInterfaces.SelectedIndexChanged += new System.EventHandler(this.lstInterfaces_SelectedIndexChanged);
             // 
             // btnAddInterface
             // 
-            this.btnAddInterface.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAddInterface.Enabled = false;
             this.btnAddInterface.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddInterface.Location = new System.Drawing.Point(387, 57);
+            this.btnAddInterface.Location = new System.Drawing.Point(516, 70);
+            this.btnAddInterface.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddInterface.Name = "btnAddInterface";
-            this.btnAddInterface.Size = new System.Drawing.Size(75, 24);
+            this.btnAddInterface.Size = new System.Drawing.Size(100, 30);
             this.btnAddInterface.TabIndex = 13;
             this.btnAddInterface.Text = "Add";
             this.btnAddInterface.UseVisualStyleBackColor = true;
@@ -144,9 +151,10 @@ namespace SnippetGenerator.Forms
             // 
             this.btnDeleteInterface.Enabled = false;
             this.btnDeleteInterface.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteInterface.Location = new System.Drawing.Point(387, 154);
+            this.btnDeleteInterface.Location = new System.Drawing.Point(516, 190);
+            this.btnDeleteInterface.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteInterface.Name = "btnDeleteInterface";
-            this.btnDeleteInterface.Size = new System.Drawing.Size(75, 24);
+            this.btnDeleteInterface.Size = new System.Drawing.Size(100, 30);
             this.btnDeleteInterface.TabIndex = 17;
             this.btnDeleteInterface.Text = "Delete";
             this.btnDeleteInterface.UseVisualStyleBackColor = true;
@@ -156,9 +164,10 @@ namespace SnippetGenerator.Forms
             // 
             this.btnUpInterface.Enabled = false;
             this.btnUpInterface.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpInterface.Location = new System.Drawing.Point(387, 92);
+            this.btnUpInterface.Location = new System.Drawing.Point(516, 113);
+            this.btnUpInterface.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpInterface.Name = "btnUpInterface";
-            this.btnUpInterface.Size = new System.Drawing.Size(75, 24);
+            this.btnUpInterface.Size = new System.Drawing.Size(100, 30);
             this.btnUpInterface.TabIndex = 15;
             this.btnUpInterface.Text = "Up";
             this.btnUpInterface.UseVisualStyleBackColor = true;
@@ -168,9 +177,10 @@ namespace SnippetGenerator.Forms
             // 
             this.btnDownInterface.Enabled = false;
             this.btnDownInterface.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDownInterface.Location = new System.Drawing.Point(387, 123);
+            this.btnDownInterface.Location = new System.Drawing.Point(516, 151);
+            this.btnDownInterface.Margin = new System.Windows.Forms.Padding(4);
             this.btnDownInterface.Name = "btnDownInterface";
-            this.btnDownInterface.Size = new System.Drawing.Size(75, 24);
+            this.btnDownInterface.Size = new System.Drawing.Size(100, 30);
             this.btnDownInterface.TabIndex = 16;
             this.btnDownInterface.Text = "Down";
             this.btnDownInterface.UseVisualStyleBackColor = true;
@@ -180,9 +190,10 @@ namespace SnippetGenerator.Forms
             // 
             this.btnDeleteAllInterfaces.Enabled = false;
             this.btnDeleteAllInterfaces.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteAllInterfaces.Location = new System.Drawing.Point(387, 185);
+            this.btnDeleteAllInterfaces.Location = new System.Drawing.Point(516, 228);
+            this.btnDeleteAllInterfaces.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteAllInterfaces.Name = "btnDeleteAllInterfaces";
-            this.btnDeleteAllInterfaces.Size = new System.Drawing.Size(75, 24);
+            this.btnDeleteAllInterfaces.Size = new System.Drawing.Size(100, 30);
             this.btnDeleteAllInterfaces.TabIndex = 18;
             this.btnDeleteAllInterfaces.Text = "Delete All";
             this.btnDeleteAllInterfaces.UseVisualStyleBackColor = true;
@@ -191,21 +202,23 @@ namespace SnippetGenerator.Forms
             // txtInterfaceName
             // 
             this.txtInterfaceName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInterfaceName.Location = new System.Drawing.Point(8, 58);
+            this.txtInterfaceName.Location = new System.Drawing.Point(11, 71);
+            this.txtInterfaceName.Margin = new System.Windows.Forms.Padding(4);
             this.txtInterfaceName.MaxLength = 100;
             this.txtInterfaceName.Name = "txtInterfaceName";
-            this.txtInterfaceName.Size = new System.Drawing.Size(373, 22);
+            this.txtInterfaceName.Size = new System.Drawing.Size(496, 26);
             this.txtInterfaceName.TabIndex = 12;
-            this.txtInterfaceName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtName_KeyPress);
             this.txtInterfaceName.TextChanged += new System.EventHandler(this.txtInterfaceName_TextChanged);
+            this.txtInterfaceName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtName_KeyPress);
             // 
             // btnInsertClass
             // 
             this.btnInsertClass.Enabled = false;
             this.btnInsertClass.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsertClass.Location = new System.Drawing.Point(486, 12);
+            this.btnInsertClass.Location = new System.Drawing.Point(648, 15);
+            this.btnInsertClass.Margin = new System.Windows.Forms.Padding(4);
             this.btnInsertClass.Name = "btnInsertClass";
-            this.btnInsertClass.Size = new System.Drawing.Size(82, 24);
+            this.btnInsertClass.Size = new System.Drawing.Size(109, 30);
             this.btnInsertClass.TabIndex = 21;
             this.btnInsertClass.Text = "&Insert";
             this.btnInsertClass.UseVisualStyleBackColor = true;
@@ -215,9 +228,10 @@ namespace SnippetGenerator.Forms
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(486, 42);
+            this.btnCancel.Location = new System.Drawing.Point(648, 52);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(82, 24);
+            this.btnCancel.Size = new System.Drawing.Size(109, 30);
             this.btnCancel.TabIndex = 22;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -227,11 +241,13 @@ namespace SnippetGenerator.Forms
             // 
             this.label1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Firebrick;
-            this.label1.Location = new System.Drawing.Point(8, 333);
+            this.label1.Location = new System.Drawing.Point(11, 410);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(430, 19);
+            this.label1.Size = new System.Drawing.Size(573, 34);
             this.label1.TabIndex = 19;
-            this.label1.Text = "Note: Class, Interface names must start with alphabet or underscore.";
+            this.label1.Text = "Note: Class, Interface names must start with alphabet or underscore. \r\nAs a conve" +
+    "ntion, Interface name should prefix with I.";
             // 
             // cboOtherModifier
             // 
@@ -244,9 +260,10 @@ namespace SnippetGenerator.Forms
             "partial",
             "sealed",
             "static"});
-            this.cboOtherModifier.Location = new System.Drawing.Point(351, 37);
+            this.cboOtherModifier.Location = new System.Drawing.Point(468, 46);
+            this.cboOtherModifier.Margin = new System.Windows.Forms.Padding(4);
             this.cboOtherModifier.Name = "cboOtherModifier";
-            this.cboOtherModifier.Size = new System.Drawing.Size(111, 22);
+            this.cboOtherModifier.Size = new System.Drawing.Size(147, 26);
             this.cboOtherModifier.Sorted = true;
             this.cboOtherModifier.TabIndex = 5;
             // 
@@ -261,9 +278,10 @@ namespace SnippetGenerator.Forms
             "internal",
             "protcted internal",
             "private"});
-            this.cboAccessModifier.Location = new System.Drawing.Point(112, 37);
+            this.cboAccessModifier.Location = new System.Drawing.Point(149, 46);
+            this.cboAccessModifier.Margin = new System.Windows.Forms.Padding(4);
             this.cboAccessModifier.Name = "cboAccessModifier";
-            this.cboAccessModifier.Size = new System.Drawing.Size(139, 22);
+            this.cboAccessModifier.Size = new System.Drawing.Size(184, 26);
             this.cboAccessModifier.TabIndex = 3;
             // 
             // lblOtherModifier
@@ -271,9 +289,10 @@ namespace SnippetGenerator.Forms
             this.lblOtherModifier.AutoSize = true;
             this.lblOtherModifier.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOtherModifier.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.lblOtherModifier.Location = new System.Drawing.Point(257, 41);
+            this.lblOtherModifier.Location = new System.Drawing.Point(343, 50);
+            this.lblOtherModifier.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblOtherModifier.Name = "lblOtherModifier";
-            this.lblOtherModifier.Size = new System.Drawing.Size(91, 13);
+            this.lblOtherModifier.Size = new System.Drawing.Size(112, 17);
             this.lblOtherModifier.TabIndex = 4;
             this.lblOtherModifier.Text = "Other Modifier:";
             // 
@@ -282,9 +301,10 @@ namespace SnippetGenerator.Forms
             this.lblAccessModifier.AutoSize = true;
             this.lblAccessModifier.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAccessModifier.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.lblAccessModifier.Location = new System.Drawing.Point(8, 39);
+            this.lblAccessModifier.Location = new System.Drawing.Point(11, 48);
+            this.lblAccessModifier.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAccessModifier.Name = "lblAccessModifier";
-            this.lblAccessModifier.Size = new System.Drawing.Size(98, 13);
+            this.lblAccessModifier.Size = new System.Drawing.Size(118, 17);
             this.lblAccessModifier.TabIndex = 2;
             this.lblAccessModifier.Text = "Access Modifier:";
             this.lblAccessModifier.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -294,9 +314,10 @@ namespace SnippetGenerator.Forms
             this.lblSeparator.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblSeparator.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSeparator.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblSeparator.Location = new System.Drawing.Point(473, 9);
+            this.lblSeparator.Location = new System.Drawing.Point(631, 11);
+            this.lblSeparator.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSeparator.Name = "lblSeparator";
-            this.lblSeparator.Size = new System.Drawing.Size(2, 320);
+            this.lblSeparator.Size = new System.Drawing.Size(3, 424);
             this.lblSeparator.TabIndex = 19;
             // 
             // btnInfo
@@ -305,9 +326,10 @@ namespace SnippetGenerator.Forms
             this.btnInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnInfo.ImageIndex = 0;
             this.btnInfo.ImageList = this.imglstClass;
-            this.btnInfo.Location = new System.Drawing.Point(504, 316);
+            this.btnInfo.Location = new System.Drawing.Point(648, 403);
+            this.btnInfo.Margin = new System.Windows.Forms.Padding(4);
             this.btnInfo.Name = "btnInfo";
-            this.btnInfo.Size = new System.Drawing.Size(64, 24);
+            this.btnInfo.Size = new System.Drawing.Size(109, 30);
             this.btnInfo.TabIndex = 23;
             this.btnInfo.Text = "  &Hide";
             this.btnInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -323,20 +345,23 @@ namespace SnippetGenerator.Forms
             // 
             // webClassInfo
             // 
-            this.webClassInfo.Location = new System.Drawing.Point(9, 355);
-            this.webClassInfo.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webClassInfo.Location = new System.Drawing.Point(12, 482);
+            this.webClassInfo.Margin = new System.Windows.Forms.Padding(4);
+            this.webClassInfo.MinimumSize = new System.Drawing.Size(27, 25);
             this.webClassInfo.Name = "webClassInfo";
-            this.webClassInfo.Size = new System.Drawing.Size(556, 212);
+            this.webClassInfo.Size = new System.Drawing.Size(741, 261);
             this.webClassInfo.TabIndex = 20;
+            this.webClassInfo.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.WebClassInfo_Navigated);
             // 
             // label2
             // 
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Firebrick;
-            this.label2.Location = new System.Drawing.Point(8, 355);
+            this.label2.Location = new System.Drawing.Point(11, 448);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(2, 215);
+            this.label2.Size = new System.Drawing.Size(3, 297);
             this.label2.TabIndex = 25;
             // 
             // label3
@@ -344,9 +369,10 @@ namespace SnippetGenerator.Forms
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Firebrick;
-            this.label3.Location = new System.Drawing.Point(566, 355);
+            this.label3.Location = new System.Drawing.Point(755, 448);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(2, 215);
+            this.label3.Size = new System.Drawing.Size(3, 296);
             this.label3.TabIndex = 23;
             // 
             // label4
@@ -354,9 +380,10 @@ namespace SnippetGenerator.Forms
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Firebrick;
-            this.label4.Location = new System.Drawing.Point(8, 353);
+            this.label4.Location = new System.Drawing.Point(11, 445);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(560, 2);
+            this.label4.Size = new System.Drawing.Size(747, 2);
             this.label4.TabIndex = 23;
             // 
             // label5
@@ -364,9 +391,10 @@ namespace SnippetGenerator.Forms
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label5.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Firebrick;
-            this.label5.Location = new System.Drawing.Point(8, 568);
+            this.label5.Location = new System.Drawing.Point(11, 745);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(560, 2);
+            this.label5.Size = new System.Drawing.Size(747, 2);
             this.label5.TabIndex = 24;
             // 
             // chkGenerateDefaultConstructor
@@ -376,9 +404,10 @@ namespace SnippetGenerator.Forms
             this.chkGenerateDefaultConstructor.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkGenerateDefaultConstructor.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkGenerateDefaultConstructor.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.chkGenerateDefaultConstructor.Location = new System.Drawing.Point(8, 65);
+            this.chkGenerateDefaultConstructor.Location = new System.Drawing.Point(11, 80);
+            this.chkGenerateDefaultConstructor.Margin = new System.Windows.Forms.Padding(4);
             this.chkGenerateDefaultConstructor.Name = "chkGenerateDefaultConstructor";
-            this.chkGenerateDefaultConstructor.Size = new System.Drawing.Size(193, 17);
+            this.chkGenerateDefaultConstructor.Size = new System.Drawing.Size(234, 21);
             this.chkGenerateDefaultConstructor.TabIndex = 6;
             this.chkGenerateDefaultConstructor.Text = "Generate Default Constructor";
             this.chkGenerateDefaultConstructor.UseVisualStyleBackColor = true;
@@ -390,9 +419,10 @@ namespace SnippetGenerator.Forms
             this.chkInheritance.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkInheritance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkInheritance.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.chkInheritance.Location = new System.Drawing.Point(8, 92);
+            this.chkInheritance.Location = new System.Drawing.Point(11, 113);
+            this.chkInheritance.Margin = new System.Windows.Forms.Padding(4);
             this.chkInheritance.Name = "chkInheritance";
-            this.chkInheritance.Size = new System.Drawing.Size(92, 17);
+            this.chkInheritance.Size = new System.Drawing.Size(110, 21);
             this.chkInheritance.TabIndex = 7;
             this.chkInheritance.Text = "Inheritance";
             this.chkInheritance.UseVisualStyleBackColor = true;
@@ -410,17 +440,30 @@ namespace SnippetGenerator.Forms
             this.panel1.Controls.Add(this.lblInterfaceNames);
             this.panel1.Controls.Add(this.btnUpInterface);
             this.panel1.Controls.Add(this.btnDownInterface);
-            this.panel1.Location = new System.Drawing.Point(0, 108);
+            this.panel1.Location = new System.Drawing.Point(0, 133);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(467, 215);
+            this.panel1.Size = new System.Drawing.Size(623, 265);
             this.panel1.TabIndex = 8;
+            // 
+            // btnBack
+            // 
+            this.btnBack.Enabled = false;
+            this.btnBack.Location = new System.Drawing.Point(22, 451);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(109, 30);
+            this.btnBack.TabIndex = 26;
+            this.btnBack.Text = "< Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
             // frmClass
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(577, 576);
+            this.ClientSize = new System.Drawing.Size(769, 751);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.chkInheritance);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.chkGenerateDefaultConstructor);
@@ -441,6 +484,7 @@ namespace SnippetGenerator.Forms
             this.Controls.Add(this.lblAccessModifier);
             this.Controls.Add(this.webClassInfo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmClass";
@@ -486,5 +530,6 @@ namespace SnippetGenerator.Forms
         private System.Windows.Forms.CheckBox chkGenerateDefaultConstructor;
         private System.Windows.Forms.CheckBox chkInheritance;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnBack;
     }
 }

@@ -6,13 +6,19 @@ namespace SnippetGenerator.Classes
 {
     class SnippetGeneratorMembers
     {
-     
+
     }
 
     //struct ClassGeneratorMembers
     //{
 
     //}
+
+    public struct Types
+    {
+        public const string Class = "Class";
+        public const string Interface = "Interface";
+    }
 
     public enum FileStatusType
     {

@@ -12,7 +12,7 @@ namespace SnippetGenerator.Forms
     public partial class frmClass : Form
     {
         private string strClass = string.Empty;
-        
+
         private string strAccessModifier = "public";
         private string strOtherModifier = string.Empty;
 
@@ -21,7 +21,7 @@ namespace SnippetGenerator.Forms
             InitializeComponent();
         }
 
-        public string Class
+        public string ClassText
         {
             get
             {
@@ -45,13 +45,13 @@ namespace SnippetGenerator.Forms
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            this.strClass = GetClassText();
+            this.strClass = SetClassText();
             this.DialogResult = DialogResult.OK;
             this.Hide();
         }
 
         #region [ GetClassText ]
-        private string GetClassText()
+        private string SetClassText()
         {
             StringBuilder sbClass = new StringBuilder(string.Empty);
 
@@ -70,7 +70,7 @@ namespace SnippetGenerator.Forms
                         sbClass.Append(lstInterfaces.Items[index] + ", ");
                 }
                 sbClass.Replace(",", "", sbClass.Length - 2, 1);
-            }            
+            }
             sbClass.Append("\n{");
             if (chkGenerateDefaultConstructor.Checked)
                 sbClass.Append("\n\t" + "public " + txtClassName.Text + "()\n\t{\n\t}");
@@ -217,7 +217,7 @@ namespace SnippetGenerator.Forms
             cboAccessModifier.SelectedIndex = 0;
             cboOtherModifier.SelectedIndex = 0;
             chkInheritance.Checked = false;
-        }        
+        }
 
         #region [ btnUpInterface_Click ]
         private void btnUpInterface_Click(object sender, EventArgs e)
@@ -225,7 +225,7 @@ namespace SnippetGenerator.Forms
             if (lstInterfaces.SelectedIndex > 0)
             {
                 Int32 selectedIndex = lstInterfaces.SelectedIndex;
-                string strInterface = lstInterfaces.Items[selectedIndex].ToString();                
+                string strInterface = lstInterfaces.Items[selectedIndex].ToString();
                 lstInterfaces.Items.RemoveAt(selectedIndex);
                 lstInterfaces.Items.Insert(selectedIndex - 1, strInterface);
                 lstInterfaces.SelectedIndex = selectedIndex - 1;
@@ -254,12 +254,12 @@ namespace SnippetGenerator.Forms
             switch (b.Text)
             {
                 case "  &Hide":
-                    this.Height = 385;
+                    this.Height = 400;
                     b.Text = "  &Show";
                     b.ImageIndex = 1;
                     break;
                 case "  &Show":
-                    this.Height = 608;
+                    this.Height = 766;
                     b.Text = "  &Hide";
                     b.ImageIndex = 0;
                     break;
@@ -272,5 +272,17 @@ namespace SnippetGenerator.Forms
             panel1.Enabled = chkInheritance.Checked;
         }
 
+        private void BtnBack_Click(object sender, EventArgs e)
+        {
+            if (webClassInfo.CanGoBack)
+            {
+                webClassInfo.GoBack();
+            }
+        }
+
+        private void WebClassInfo_Navigated(object sender, WebBrowserNavigatedEventArgs e)
+        {
+            btnBack.Enabled = webClassInfo.CanGoBack;
+        }
     }
 }

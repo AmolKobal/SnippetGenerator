@@ -56,7 +56,7 @@ namespace SnippetGenerator
                     OpenFile(openFile.FileName);
                     rtbClassGenerator.SelectionStart = rtbClassGenerator.TextLength;
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
@@ -79,7 +79,7 @@ namespace SnippetGenerator
                 default:
                     rtbClassGenerator.LoadFile(fileName, RichTextBoxStreamType.PlainText);
                     break;
-            }            
+            }
             this.strFilePath = fileName;
             this.strFileName = fileInfo.Name;
             this.Text = "ClassGenerator - " + fileInfo.Name;
@@ -93,7 +93,7 @@ namespace SnippetGenerator
         {
             statusGenerator.Text = string.Empty;
             statusGenerator.ForeColor = Color.Black;
-            if(rtbClassGenerator.TextLength < 0)
+            if (rtbClassGenerator.TextLength < 0)
             {
                 mlstReferenceMembers.Clear();
                 mlstReferenceMembersType.Clear();
@@ -123,12 +123,12 @@ namespace SnippetGenerator
                         {
                             #region [ class ]
                             case "class":
-                                if (!ContainsReferenceType(strTokens[index + 1]))
+                                if (!ReferenceTypeExists(strTokens[index + 1]))
                                 {
                                     if (!ContainseValueType(strTokens[index + 1]))
                                     {
                                         mlstReferenceMembers.Add(strTokens[index + 1]);
-                                        mlstReferenceMembersType.Add("class");                                        
+                                        mlstReferenceMembersType.Add("class");
                                     }
                                     else
                                     {
@@ -153,10 +153,10 @@ namespace SnippetGenerator
                             case "struct":
                                 if (!ContainseValueType(strTokens[index + 1]))
                                 {
-                                    if (!ContainsReferenceType(strTokens[index + 1]))
+                                    if (!ReferenceTypeExists(strTokens[index + 1]))
                                     {
                                         mlstValueMembers.Add(strTokens[index + 1]);
-                                        mlstValueMembersType.Add("struct");                                        
+                                        mlstValueMembersType.Add("struct");
                                     }
                                     else
                                     {
@@ -178,7 +178,7 @@ namespace SnippetGenerator
 
                             #region [ interface ]
                             case "interface":
-                                if (!ContainsReferenceType(strTokens[index + 1]))
+                                if (!ReferenceTypeExists(strTokens[index + 1]))
                                 {
                                     if (!ContainseValueType(strTokens[index + 1]))
                                     {
@@ -206,12 +206,12 @@ namespace SnippetGenerator
                             #region [ delegate ]
                             case "delegate":
                                 if ((strTokens.Length + 1 > (index + 1)) &&
-                                !ContainsReferenceType(strTokens[index + 2]))
+                                !ReferenceTypeExists(strTokens[index + 2]))
                                 {
                                     if (!ContainseValueType(strTokens[index + 2]))
                                     {
                                         mlstReferenceMembers.Add(strTokens[index + 2]);
-                                        mlstReferenceMembersType.Add("delegate");                                        
+                                        mlstReferenceMembersType.Add("delegate");
                                     }
                                     else
                                     {
@@ -235,10 +235,10 @@ namespace SnippetGenerator
                             case "enum":
                                 if (!ContainseValueType(strTokens[index + 1]))
                                 {
-                                    if (!ContainsReferenceType(strTokens[index + 1]))
+                                    if (!ReferenceTypeExists(strTokens[index + 1]))
                                     {
                                         mlstValueMembers.Add(strTokens[index + 1]);
-                                        mlstValueMembersType.Add("enum");                                        
+                                        mlstValueMembersType.Add("enum");
                                     }
                                     else
                                     {
@@ -256,7 +256,7 @@ namespace SnippetGenerator
                                     statusGenerator.ForeColor = Color.Red;
                                 }
                                 break;
-                            #endregion
+                                #endregion
                         }
                     }
                 }
@@ -329,10 +329,11 @@ namespace SnippetGenerator
             frmClass Class = new frmClass();
             if (DialogResult.OK == Class.ShowDialog())
             {
-                if (!ContainsReferenceType(Class.ClassName))
+                if (!ReferenceTypeExists(Class.ClassName))
                 {
-                    rtbClassGenerator.SelectedText = Class.Class;
+                    rtbClassGenerator.SelectedText = Class.ClassText;
                     mlstReferenceMembers.Add(Class.ClassName);
+                    mlstReferenceMembersType.Add(Types.Class);
                 }
                 else
                     MessageBox.Show("Class '" + Class.ClassName + "' already added.");
@@ -341,8 +342,8 @@ namespace SnippetGenerator
         }
         #endregion
 
-        #region [ ContainsReferenceType ]
-        private bool ContainsReferenceType(string referenceName)
+        #region [ ReferenceTypeExists ]
+        private bool ReferenceTypeExists(string referenceName)
         {
             if (mlstReferenceMembers.Contains(referenceName))
                 return true;
@@ -540,7 +541,7 @@ namespace SnippetGenerator
             frmInterface Interface = new frmInterface();
             if (DialogResult.OK == Interface.ShowDialog())
             {
-                if (!ContainsReferenceType(Interface.InterfaceName))
+                if (!ReferenceTypeExists(Interface.InterfaceName))
                 {
                     this.rtbClassGenerator.SelectedText = Interface.Interface;
                     mlstReferenceMembers.Add(Interface.InterfaceName);
@@ -557,7 +558,7 @@ namespace SnippetGenerator
         {
             cutToolbarButton.Enabled = rtbClassGenerator.SelectionLength > 0 ? true : false;
             copyToolbarButton.Enabled = cutToolbarButton.Enabled;
-            
+
 
             pasteToolbarButton.Enabled = rtbClassGenerator.CanPaste(DataFormats.GetFormat(DataFormats.Text));
 
@@ -579,7 +580,7 @@ namespace SnippetGenerator
             clearEditMenuItem.Enabled = cutToolbarButton.Enabled;
 
             cutEditMenuItem.Enabled = cutToolbarButton.Enabled;
-            copyEditMenuItem.Enabled = cutToolbarButton.Enabled; 
+            copyEditMenuItem.Enabled = cutToolbarButton.Enabled;
 
             pasteToolbarButton.Enabled = rtbClassGenerator.CanPaste(DataFormats.GetFormat(DataFormats.Text));
 
@@ -708,7 +709,7 @@ namespace SnippetGenerator
             frmDelegate Delegate = new frmDelegate();
             if (DialogResult.OK == Delegate.ShowDialog())
             {
-                if (!ContainsReferenceType(Delegate.DelegateName))
+                if (!ReferenceTypeExists(Delegate.DelegateName))
                 {
                     rtbClassGenerator.SelectedText = Delegate.Delegate;
                     mlstReferenceMembers.Add(Delegate.DelegateName);
@@ -896,7 +897,7 @@ namespace SnippetGenerator
                         if (rtbClassGenerator.SelectionStart < intCodeSnippetStart)
                             lstCodeSnippet.Visible = false;
                         break;
-                    default:                        
+                    default:
                         break;
                 }
             }
